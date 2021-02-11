@@ -51,7 +51,6 @@ const addTask = (taskValue, parentNode) => {
 
     let tasks = document.getElementById(parentNode);
     tasks.insertBefore(task, tasks.childNodes[0]);
-    debugger
 }
 
 
@@ -134,7 +133,6 @@ const dragStart = (event) => {
 }
 
 const dragEnd = (event) => {    
-    debugger
     event.target.className = 'task fill';
 }
 
