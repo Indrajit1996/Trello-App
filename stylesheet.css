@@ -1,0 +1,235 @@
+
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body {
+  background-color: #F5F7FA;
+}
+#app {
+  margin-left: 100px;
+}
+#board {
+  margin-top: 60px;
+  display: flex;
+}
+
+.square {
+  height: 50px;
+  width: 50px;
+}
+
+#add-task-form {
+  position: absolute;
+  right: 100px;
+  display: flex;
+}
+#add-task-form #task-value {
+  padding-left: 16px;
+  margin-top: 1px;
+  height: 46px;
+  width: 240px;
+  border-radius: 0px;
+  margin-right: 8px;
+  font-family: 'Lato';
+  font-size: 16px;
+  line-height: 19px;
+  border: none;
+}
+#add-task-form #task-value ::placeholder {
+  color: #E4E6E8;
+}
+#add-task-form #task-value:focus {
+  outline: 0;
+}
+#add-task-form #add-task {
+  background: blue;
+  border: none;
+  border-radius: 4px;
+  width: 50px;
+  height: 50px;
+  font-family: Lato;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+}
+#add-task-form #add-task:focus {
+  outline: 0;
+}
+#columns {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+}
+.column {
+  flex: 0 0 auto;
+  width: 340px;
+  height: 520px;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 1px;
+  margin-left: 40px;
+  background-color: white;
+}
+.column:nth-child(1) {
+  margin-left: 0px;
+}
+.column-title {
+  margin: 24px 0px 0px 24px;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+}
+.task {
+  list-style-type: none;
+  margin: 16px 0px 0px 24px;
+  padding: 10px 8px 10px 10px;
+  position: relative;
+  background-color: white;
+  border: 1px solid #EBEDF0;
+  box-sizing: border-box;
+  border-radius: 2px;
+  min-height: 80px;
+  width: 288px;
+}
+.task:nth-child(1) {
+  margin-top: 32px;
+}
+.task .task-content {
+  margin: 16px 16px 0 16px;
+  font-family: 'Lato';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #54585A;
+}
+.task:hover {
+  background: #FFFFFF;
+  border: 1px solid blue;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+.task .trash {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-family: 'Lato';
+  color: #54585A;
+}
+.task .trash:hover {
+  color: #c42d1c;
+}
+
+.hovered {
+  border-style: dashed;
+}
+.invisible {
+  display: none;
+}
+
+.col-dropzone {
+  position: relative;
+}
+
+.lane-add {
+  position: absolute;
+  bottom: 2%; 
+  left: 25%;
+}
+
+.exit-lane {
+  float: right; 
+  padding-right: 16px;
+  cursor: pointer;
+}
+
+.exit-lane:hover {
+  color: #c42d1c;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="./stylesheet.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+        <script src="app.js" defer></script>
+        <title>SuprDaily</title>
+    </head>
+    <body>
+        
+        <main id="app">
+            <section id="board">
+                <div id="infos">
+                    <div class="square"><p id="letter"></p></div>
+                    
+                </div>
+                <div id="add-task-form">
+                    <input id="task-value" placeholder="Add List">
+                    <button id="add-lane">Add List</button>
+                </div>
+            </section>
+            <section id="columns">
+                <div class="column dropzone col-dropzone">
+                    <h3 class="column-title">
+                        Teams
+                        <span class="exit-lane" id="remove-lane-1">x</span>
+                    </h3>
+                    <ul class="tasks" id="tasks-added-backlog">
+                        
+                    </ul>
+                    <div class="lane-add"  >
+                        <input id="task-value-1" placeholder="Add Task">
+                        <button id="add-task-1">+</button>
+                    </div>
+                </div>
+                <div class="column dropzone col-dropzone">
+                    <h3 class="column-title">
+                        Products
+                        <span class="exit-lane" id="remove-lane-2">x</span>
+                    </h3>
+                    <ul class="tasks" id="tasks-added-todo">
+                
+                    </ul>
+                    <div class="lane-add" >
+                        <input id="task-value-2" placeholder="Add Task">
+                        <button id="add-task-2">+</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
