@@ -5,27 +5,20 @@ document.getElementById('add-lane').addEventListener('click', function() {
     if (taskValue) addLane(taskValue);
     document.getElementById('task-value').value = '';
 });
-document.getElementById('add-task-1').addEventListener('click', function() {
-    let taskValue = document.getElementById('task-value-1').value;
-    if (taskValue) addTask(taskValue, 'tasks-added-backlog');
-    document.getElementById('task-value-1').value = '';
-});
-document.getElementById('add-task-2').addEventListener('click', function() {
-    let taskValue = document.getElementById('task-value-2').value;
-    if (taskValue) addTask(taskValue, 'tasks-added-todo');
-    document.getElementById('task-value-2').value = '';
-});
-document.getElementById('remove-lane-1').addEventListener('click', function() {
-    let node = document.getElementById('remove-lane-1').parentNode.parentNode;
-    let parent = node.parentNode;
-    parent.removeChild(node);
-});
-document.getElementById('remove-lane-2').addEventListener('click', function() {
-    let node = document.getElementById('remove-lane-2').parentNode.parentNode;
-    let parent = node.parentNode;
-    parent.removeChild(node);
-});
+function handleClick(e) {
+    let value = document.getElementById(e).parentNode.children[0].value;
+    let childId = document.getElementById(e).parentNode.parentNode.children[1].id
+    if(value && value.trim()) {
+        addTask(value, childId);
+    }
+    document.getElementById(e).parentNode.children[0].value = '';
+}
 
+function removeLane(e) {
+    let node = document.getElementById(e).parentNode.parentNode;
+    let parent = node.parentNode;
+    parent.removeChild(node);
+}
 
 var count = 5;
 var count_lane = 5;
