@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="./stylesheet.css">
         <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
-        <script src="app.js" defer></script>
+        <script src="objectOrientedScript.js" defer></script>
         <title>SuprDaily</title>
     </head>
     <body>
@@ -15,7 +15,6 @@
             <section id="board">
                 <div id="infos">
                     <div class="square"><p id="letter"></p></div>
-                    
                 </div>
                 <div id="add-task-form">
                     <input id="task-value" placeholder="Add List">
@@ -26,27 +25,27 @@
                 <div class="column dropzone col-dropzone">
                     <h3 class="column-title">
                         Teams
-                        <span class="exit-lane" id="remove-lane-1" onclick="removeLane('remove-lane-1')">x</span>
+                        <span class="exit-lane" id="remove-lane-1">x</span>
                     </h3>
                     <ul class="tasks" id="tasks-added-backlog">
                         
                     </ul>
                     <div class="lane-add"  >
                         <input id="task-value-1" placeholder="Add Task">
-                        <button id="add-task-1" onclick="handleClick('add-task-1')">+</button>
+                        <button id="add-task-1" data-action="add-task">+</button>
                     </div>
                 </div>
                 <div class="column dropzone col-dropzone">
                     <h3 class="column-title">
                         Products
-                        <span class="exit-lane" id="remove-lane-2" onclick="removeLane('remove-lane-2')">x</span>
+                        <span class="exit-lane" id="remove-lane-2">x</span>
                     </h3>
                     <ul class="tasks" id="tasks-added-todo">
                 
                     </ul>
                     <div class="lane-add" >
                         <input id="task-value-2" placeholder="Add Task">
-                        <button id="add-task-2" onclick="handleClick('add-task-2')">+</button>
+                        <button id="add-task-2" >+</button>
                     </div>
                 </div>
             </section>
