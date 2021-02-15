@@ -53,9 +53,13 @@ class TrelloBoard {
     addElement.appendChild(inputElement);
     addElement.appendChild(button);
 
+    task.addEventListener('dragstart', this.dragStart);
+    task.addEventListener('dragend', this.dragEnd);
+
     task.appendChild(taskContent);
     task.appendChild(createUl);
     task.appendChild(addElement);
+    this.addDropListners();
 
     let columns = document.getElementById('columns');
     columns.appendChild(task);
@@ -88,6 +92,17 @@ class TrelloBoard {
     }
   }
 
+  addDropListners = () => {
+    let dropzones = document.querySelectorAll('.dropzone');
+    console.log(dropzones);
+    for(let dropzone of dropzones) {
+      dropzone.addEventListener('dragenter', this.dragEnter);
+      dropzone.addEventListener('dragover', this.dragOver);
+      dropzone.addEventListener('dragleave', this.dragLeave);
+      dropzone.addEventListener('drop', this.dragDrop);
+    }
+  }
+
   createTaskCard = (taskValue, parentNode) => {
     let task = document.createElement('li');
     task.classList.add('task');
@@ -110,6 +125,7 @@ class TrelloBoard {
 
     let tasks = document.getElementById(parentNode);
     tasks.insertBefore(task, tasks.childNodes[0]);
+    this.addDropListners();
   }
 
   removeTaskCard = (event) => {
@@ -169,11 +185,3 @@ class TrelloBoard {
 }
 
 var lane =  new TrelloBoard(app);
-
-dropzones = document.querySelectorAll('.dropzone');
-for(let dropzone of dropzones) {
-  dropzone.addEventListener('dragenter', lane.dragEnter);
-  dropzone.addEventListener('dragover', lane.dragOver);
-  dropzone.addEventListener('dragleave', lane.dragLeave);
-  dropzone.addEventListener('drop', lane.dragDrop);
-}
